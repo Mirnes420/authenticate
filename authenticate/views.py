@@ -64,7 +64,7 @@ def submit_signup(request):
 def allowed(request):
     return render(request, 'authenticate/allowed.html')
 
-# using @login_method to protect certain pages from non-authorised users //goal of the task//
+# using @login_required decorator to protect certain pages from non-authorised users //goal of the task//
 
 @login_required
 def protected(request):
