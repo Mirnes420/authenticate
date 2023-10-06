@@ -21,14 +21,14 @@ Before you begin, make sure you have the following:
   <code>from django.contrib.auth.decorators import login_required
 @login_required
 def my_protected_view(request):
-    # Your view logic here</code>
+    # code logic here</code>
 
 As an alternative, you can manually check if the user is authenticated.
 
 <code>def my_protected_view(request):
     if not request.user.is_authenticated:
         return redirect('login')
-    # Your view logic here
+    # code logic here
 </code>
 <i>In this code <code>request.user.is_authenticated</code> will return <code>True</code> if the user is logged in and <code>False</code> otherwise. In that case, user is redirected to the login page.</i></li>
 <li><strong>Update Your URLs:</strong>  In your <strong>urls.py</strong> file, make sure that Django knows where your login view is. You can do this by setting the <strong>LOGIN_URL</strong> setting.
