@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'authenticate/css/styles.css' %}">
+    <title>Home</title>
+    
+</head>
+<body>
+    <div id="sign-in">
+        <div id="signIn">
+        <form action="/submit_signin" method="post">
+            {% csrf_token %}
+            <h3 class="signHeader">Sign In</h3>
+            <!--if invalid login, show error-->
+            {% if error %}
+    <p id="err">{{ error }}</p>
+            {% endif %}
+            <label for="username"></label><br>
+            <input type="username" id="username" name="username" placeholder="Username:" required><br>
+            <label for="password"></label><br>
+            <input type="password" id="password" name="password" placeholder="Password:" required><br>
+    
+            <input class='submit-button' type="submit" value="Submit">
+        </form>
+        </div>
+        <p>or</p>
+    <div id="sign-up">
+        <h3>Don't have an account?</h3>
+        <a id='signUpButton' href="{% url 'sign_up' %}">Sign Up</a>
+    </div>
+    </div>
+    <a id='home' href="{% url 'home' %}">Home</a>
+</body>
+</html>

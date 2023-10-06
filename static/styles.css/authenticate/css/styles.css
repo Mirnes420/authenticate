@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(6, 12, 71);
+    color: white;
+}
+
+#header{
+    text-align: center;
+    font-size: 2em;
+    color: white;
+}

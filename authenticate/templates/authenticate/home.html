@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'authenticate/css/styles.css' %}">
+    <title>Home</title>
+    
+</head>
+<body>
+    <!--Simple if-else statement that renders user.username and logout button if user is active-->
+    {% if user.is_authenticated %}
+    <div>
+    <header id='greeting' class="loginMessage">
+        Hello, {{ user.username }}!</header>
+    <form class='link' id='logout' method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button class='logout' type="submit">Logout</button><br>
+    </form>
+    </div>
+    <!-- otherwise returns a message and a login button-->
+{% else %}
+<div>
+    <h3 class="loginMessage">You are not logged in.</h3>
+    <a id='logInButton' href="{% url 'log_in' %}">Log in</a><br>
+    </div>
+{% endif %}
+    <!--Page that requires authorisation-->
+<a class='protectedPage' href="{% url 'protected' %}">Protected page.</a>
+</body>
+</html>
