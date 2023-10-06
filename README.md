@@ -19,12 +19,11 @@ Before you begin, make sure you have the following:
 <li><strong>Protect your views:</strong> In the views that you want to protect, use @login_required decorator. This will ensure that only logged in users can access the view.
   
   <code>from django.contrib.auth.decorators import login_required
-  
 @login_required
 def my_protected_view(request):
     # Your view logic here</code>
 
-As an alternative, you can manually chec if the user is authenticated.
+As an alternative, you can manually check if the user is authenticated.
 
 <code>def my_protected_view(request):
     if not request.user.is_authenticated:
@@ -36,7 +35,6 @@ As an alternative, you can manually chec if the user is authenticated.
 
 <code>from django.urls import path
 from . import views
-
 urlpatterns = [
     path('login/', views.login_view, name='login'),
     # Your other urls here
