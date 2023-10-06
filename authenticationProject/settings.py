@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'authenticate'
 ]
 
+# Static files(style) and redirecting url if user is not authorized to see the page
 STATIC_URL = '/static/'
 LOGIN_URL='/log-in/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

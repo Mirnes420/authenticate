@@ -70,7 +70,7 @@ def allowed(request):
 def protected(request):
     return render(request, 'authenticate/protected.html')
 
-# logout function that ends user section and returns the user to the homepage
+# logout function that ends user session and returns the user to the homepage
 
 def logout_view(request):
     logout(request)
