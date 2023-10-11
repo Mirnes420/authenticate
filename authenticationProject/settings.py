@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-m23$l47sxkeq_x7na+!hht&18x%fd)jem$j-m$iio8a53lp+6g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', '192.168.178.47']
 
 
 # Application definition
@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authenticate'
+    'authenticate', 
+    'django_otp',
+    'django_otp.plugins.otp_totp',
 ]
 
 # Static files(style) and redirecting url if user is not authorized to see the page
@@ -118,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Config for sending emails to verify profiles
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'm29490596@gmail.com'
+EMAIL_HOST_PASSWORD = 'fnkn bbsm kzbf mphq'
+EMAIL_USE_SSL = False

@@ -8,6 +8,7 @@ body{
     height: 100vh;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 
 }
 
@@ -151,3 +152,36 @@ p{
 }
 
 
+input:placeholder-shown{
+    color: white;
+}
+
+#verifyHeader{
+    color:aqua;
+}
+
+#verified{
+    opacity:40%;
+    color: greenyellow;
+    position:relative;
+    bottom:-10em;
+}
+
+#verifyEmail{
+    background-color: transparent;
+    color: rgb(68, 68, 80);
+    border:none;
+    font-size:1.3em;
+    position:relative;
+    bottom:-10em;
+}
+
+#verifyEmail:hover{
+    text-decoration: underline;
+    color:rgb(41, 75, 105);
+    
+}
+
+#checkVerificationCode{
+    display:none;
+}

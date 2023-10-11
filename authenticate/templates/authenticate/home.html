@@ -10,7 +10,8 @@
     
 </head>
 <body>
-    <!--Simple if-else statement that renders user.username and logout button if user is active-->
+    <!--Simple if-else statement that renders user.username and logout button if user is active
+    otherwise returns a message and a login button-->
     {% if user.is_authenticated %}
     <div>
     <header id='greeting' class="loginMessage">
@@ -19,8 +20,18 @@
         {% csrf_token %}
         <button class='logout' type="submit">Logout</button><br>
     </form>
+    <!-- Checking if user verified using 2FA -->
+    {% if has_totp_device %}
+        <p id="verified">Congratulations! You are verified.</p>
+    {% else %}
+        <form method="post" action="{% url 'setup_2fa' %}">
+    {% csrf_token %}
+    <!-- If not verified, giving him the option to verify with email -->
+        <button id='verifyEmail' type="submit">Verify my email.</button>
+    </form>
+    {% endif %}
     </div>
-    <!-- otherwise returns a message and a login button-->
+
 {% else %}
 <div>
     <h3 class="loginMessage">You are not logged in.</h3>

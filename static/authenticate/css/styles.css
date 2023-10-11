@@ -7,36 +7,59 @@ body{
     align-items: center; /* Vertically center */
     height: 100vh;
     flex-direction: column;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 
 }
 
-#sign{
+.loginMessage {
+    color: gray;
+}
+
+#greeting{
+    font-size: 2em;
+}
+
+#logInButton{
+    color:aliceblue;
+    padding:2em;
+    text-decoration: none;
+}
+
+#logInButton:hover{
+    color:skyblue;
+    text-decoration: underline;
+}
+
+#sign-in{
     display: flex;
     flex-direction: column;
-    flex-wrap:wrap;
-    justify-content: space-around;  
-    padding-top: 3em;
+    padding:2em;
     width: 20em;
-    padding: 1em;
-    border:1px solid white;
+    border: 1px solid white;
     border-radius: 40px;
 
 }
 
-.signButton {
+
+#signUpButton {
     color: antiquewhite;
     text-decoration: none;
+    margin-bottom:2em;
 }
 
-.signButton:hover{
+#signUpButton:hover{
    text-decoration: underline;
-    color:gray;
+    color:skyblue;
     letter-spacing: 1px;
 }
 
-form{
-    padding: 2em;
+
+#signUpForm{
+    border:1px solid white;
+    border-radius: 40px;
+    padding:2em;
+    width: 20em;
 }
 
 input{
@@ -59,12 +82,13 @@ input{
 }
 
 
-#goBack{
+#home{
     color: antiquewhite;
     text-decoration: none;
     
 }
-#goBack:hover{
+
+#home:hover{
     text-decoration: underline;
     color:aquamarine;
 }
@@ -97,54 +121,62 @@ p{
     text-decoration: underline;
 }
 
-a {
-    color: white;
+
+.protectedPage{
+    color: aliceblue;
+    margin-top:2em;
+    margin-bottom:2em;
     text-decoration: none;
 
 }
 
-a.hover{
-    color: gray;
-}
-
-
-
-
-.protectedPage{
-    color: aliceblue;
-
-}
-
 .protectedPage:hover{
-    color: gainsboro;
+    color: red;
     text-decoration: unerline;
 }
 
-.loginMessage {
-    color: gray;
-}
 
-#greeting{
-    font-size: 2em;
-}
-
-#logInButton{
-    color:blue;
-    padding:2em;
-}
-
-#logInButton:hover{
-    color:gray;
-    text-decoration: underline;
-}
-
-#logout{
+.logout{
     position:fixed;
-    top:0em;
-    right:0.5em;
-    color:black;
+    top:1em;
+    right:1em;
+    color:white;
+    background-color: transparent;
+    border: 1px solid antiquewhite;
 }
 
-#logout:hover{
-    color: gray;
+.logout:hover{
+    background-color: aliceblue;
+    color:black;
+    border-color: black;
+}
+
+
+input:placeholder-shown{
+    color: white;
+}
+
+#verified{
+    opacity:40%;
+    color: greenyellow;
+    bottom:3em;
+    
+}
+
+#verifyEmail{
+    background-color: transparent;
+    color: rgb(68, 68, 80);
+    border:none;
+    font-size:1.3em;
+}
+
+#verifyEmail:hover{
+    text-decoration: underline;
+    color:rgb(41, 75, 105);
+}
+
+#checkVerficationCode{
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
 }

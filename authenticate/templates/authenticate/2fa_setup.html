@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'authenticate/css/styles.css' %}">
+    <title>2FA_setup</title>
+    
+</head>
+<body>
+    <!--input form for code confirmation-->
+    <h4 id="verifyHeader">Verify</h4>
+    <p>Enter your 2FA code below:</p>
+    <form method="post" action="{% url 'verify_2fa' %}">
+        {% csrf_token %}
+        <input type="text" name="totp_code">
+        <button id='checkVerificationCode' type="submit">Verify</button>
+    </form>
+
+<!-- show error or information, and of course, confirming an email on which we sent the code-->
+    {% if info %}
+        <p id="info">{{ info }}</br>
+        {{ user_email }}</p>
+    {% endif %}
+</body>
+</html>
