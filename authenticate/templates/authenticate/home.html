@@ -38,6 +38,8 @@
     <a id='logInButton' href="{% url 'log_in' %}">Log in</a><br>
     </div>
 {% endif %}
+<!--Link to the website1.html with providing code that will be used in website2.html also-->
+<a id='getCodeLink' href="{% url 'website1' %}?code=c123-345-123">Website 1</a>
     <!--Page that requires authorisation-->
 <a class='protectedPage' href="{% url 'protected' %}">Protected page.</a>
 </body>

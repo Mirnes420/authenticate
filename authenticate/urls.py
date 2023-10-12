@@ -13,5 +13,8 @@ urlpatterns = [
     path('protected', views.protected, name='protected'), # view that is allowed only for authorized users  
     path('logout/', views.logout_view, name='logout'),  # end a session
     path('setup_2fa/', views.setup_2fa, name='setup_2fa'),  # view for verifying code
-    path('verify_2fa/', views.verify_2fa, name='verify_2fa') # checking verification code
+    path('verify_2fa/', views.verify_2fa, name='verify_2fa'), # checking verification code
+    # using get to share within sites
+    path('website1/', views.website1, name='website1'),
+    path('website2/', views.website2, name='website2'),
 ]

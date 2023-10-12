@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Website 1</title>
+        <body>
+            <h1>Welcome to Page 1</h1>
+            <p> Click the link to go to Page 2 with GET parameter:</p>
+            <!--Passing the link I've provided in home.html for website1.html link, to apply for website2.html with request.GET.code-->
+            <a href="{% url 'website2' %}?code={{ request.GET.code }}">Go to Page 2</a>
+        </body>
+    </head>
+</html>

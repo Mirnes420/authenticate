@@ -185,3 +185,13 @@ input:placeholder-shown{
 #checkVerificationCode{
     display:none;
 }
+
+#getCodeLink{
+    padding:1em;
+    color: white;
+    text-decoration:none;
+}
+
+#getCodeLink:hover{
+    text-decoration: underline;
+}

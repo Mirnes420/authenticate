@@ -163,3 +163,14 @@ def logout_view(request):
     logout(request)
     return redirect('home')
 
+
+# USING GET PARAMETER TO LINK SITES
+
+# here we used request.GET.code for code provided
+def website1(request):
+    return render(request, 'authenticate/website1.html')
+
+# here we passed it as a value to render it to the page
+def website2(request):
+    code = request.GET.get('code', '')
+    return render(request, 'authenticate/website2.html', {'code':code})
