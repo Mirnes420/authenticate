@@ -156,11 +156,15 @@ input:placeholder-shown{
     color: white;
 }
 
+#verifyHeader{
+    color:aqua;
+}
+
 #verified{
     opacity:40%;
     color: greenyellow;
-    bottom:3em;
-    
+    position:relative;
+    bottom:-10em;
 }
 
 #verifyEmail{
@@ -168,15 +172,16 @@ input:placeholder-shown{
     color: rgb(68, 68, 80);
     border:none;
     font-size:1.3em;
+    position:relative;
+    bottom:-10em;
 }
 
 #verifyEmail:hover{
     text-decoration: underline;
     color:rgb(41, 75, 105);
+    
 }
 
-#checkVerficationCode{
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
+#checkVerificationCode{
+    display:none;
 }
