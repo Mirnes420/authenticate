@@ -149,5 +149,3 @@ The application includes protected routes that are only accessible to authentica
 # Conclusion
 
 By following these steps, you should be able to set up a basic protected area with email verification option in your Django website project.
-
-Let me know if you have any other questions.
